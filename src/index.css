@@ -1,0 +1,77 @@
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: 2px solid gray; */
+}
+
+.container{
+  border: 2px solid gray;
+  padding: 1rem;
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(4,1fr);
+  gap: 2rem;
+
+
+}
+
+.card{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid bisque;
+  animation: 2s rotateImage linear;
+  transform: rotateY(180deg);
+  transition: transform 0.5s ;
+}
+
+.card img{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  transform: scale(0);
+  animation: 2s hideImage linear;
+  transition: transform 0.5s ;
+
+}
+
+@keyframes rotateImage {
+  0%,70%{
+    transform: rotateY(0);
+  }
+  100%{
+    transform: rotateY(180deg)
+  }
+  
+}
+
+@keyframes hideImage {
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1)
+  }
+  
+}
+
+.card.active{
+  transform: rotateY(0);
+}
+
+.card.active img{
+  transform: scale(1);
+}
+
+.card.correct{
+  background-color: #65e469;
+}
+
+.card.incorrect{
+  background-color: #fd245a;
+}
