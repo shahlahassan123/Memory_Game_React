@@ -45,8 +45,8 @@ const check =(current) =>{
 }
 
 const handleClick = ( index) =>{
-  console.log(index)
-  console.log(items[index].id)
+  // console.log(index)
+  // console.log(items[index].id)
   if(prev === -1){
     setPrev(index)
     items[index].stat ="active"
